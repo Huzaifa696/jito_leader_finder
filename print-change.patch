@@ -1,0 +1,30 @@
+commit a1f3b4deede44f7d13a9a93df7a0b0a6c999cd5e
+Author: Huzaifa696 <huzaifa.rehman696@gmail.com>
+Date:   Wed Feb 8 00:32:00 2023 +0500
+
+    minor print changes
+
+diff --git a/cli/src/main.rs b/cli/src/main.rs
+index b2f66b5..bbd48aa 100644
+--- a/cli/src/main.rs
++++ b/cli/src/main.rs
+@@ -158,12 +158,13 @@ async fn main() {
+             for rpc_vote_account_info in rpc_vote_account_status.current {
+                 if let Some(_) = connected_validators.get(&rpc_vote_account_info.node_pubkey) {
+                     total_activated_connected_stake += rpc_vote_account_info.activated_stake;
+-                    info!(
+-                        "connected_leader: {}, stake: {:.2}%",
+-                        rpc_vote_account_info.node_pubkey,
+-                        rpc_vote_account_info.activated_stake as f64 * 100f64
+-                            / total_activated_stake as f64
+-                    );
++                    println!("{}", rpc_vote_account_info.node_pubkey);
++                    // info!(
++                    //     "connected_leader: {}, stake: {:.2}%",
++                    //     rpc_vote_account_info.node_pubkey,
++                    //     rpc_vote_account_info.activated_stake as f64 * 100f64
++                    //         / total_activated_stake as f64
++                    // );
+                 }
+             }
+             info!(
