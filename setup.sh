@@ -13,5 +13,5 @@ git apply ../print-change.patch
 cargo build --release
 cp ./target/release/jito-searcher-cli ~/
 cd ..
-
+sudo apt-get install -y libfontconfig1-dev
 cargo build --release
